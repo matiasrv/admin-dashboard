@@ -2,33 +2,275 @@
   box-sizing: border-box;
   margin: 0%;
   padding: 0%;
+  font-weight: bolder;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
 }
 
 .grid {
   display: grid;
-  gap: 20px 0;
+  align-items: center;
+}
+
+.main {
+  min-height: 600px;
 }
 
 .container {
   display: grid;
-  grid-template-columns: 20% 1fr;
-  grid-template-rows: 1fr;
-  background-color: #888;
+  grid-template-columns: minmax(18%, 20%) 1fr;
+  background-color: #CCF;
+}
+
+.header {
+  background-color: white;
+  padding: 20px 30px;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
+}
+
+.sidebar {
+  align-items: flex-start;
+  gap: 25px;
+  padding: 20px;
+  padding-left: 50px;
+  color: white;
+  background-color: #08F;
+}
+
+.vertical {
+  grid-template-rows: 55px repeat(auto-fit, clamp(50px, 200px, 300px));
+}
+
+.sidebar div {
+  position: relative;
+}
+
+.title {
+  position: relative;
+  font-size: 20px;
+}
+
+.title>svg {
+  position: absolute;
+  left: -35px;
+  transform: scale(1.2);
 }
 
 #cards {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  gap: 15px
+  gap: 4%;
+  padding: 15px 3%;
+  margin-top: 20px;
 }
 
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: repeat(3, 1fr);
-  gap: 15px
+  gap: 15px 5%;
 }
 
-.single {
-  grid-template-rows: repeat(autofit, 100px);
+.card {
+  display: grid;
+  align-items: flex-end;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.edit {
+  display: flex;
+  color: grey;
+  justify-content: flex-end;
+}
+
+.card svg {
+  margin: 0 10px;
+}
+
+
+p {
+  color: grey;
+  padding: 5px 0;
+  font-size: 11px;
+}
+
+.cards>.card {
+  border-left: solid orange 5px;
+}
+
+.searchbartop {
+  grid-template-columns: 15px 1fr 30%;
+  gap: 20px;
+}
+
+#info {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  gap: 50px;
+}
+
+#cards div {
+  position: relative;
+}
+
+#announcements,
+#trending {
+  padding: 20px;
+}
+
+#announcements::before {
+  content: "Announcements";
+  position: absolute;
+  top: -1.5rem;
+}
+
+#announcements p {
+  font-size: 11px;
+  font-weight: normal;
+  margin: 5px 0;
+}
+
+#trending::before {
+  content: "Trending";
+  position: absolute;
+  top: -1.5rem;
+}
+
+#your-projects::before {
+  content: "Your Projects";
+  position: absolute;
+  top: -1.5rem;
+}
+
+a {
+  font-size: 14px;
+  text-decoration: none;
+  color: black;
+  justify-content: center;
+}
+
+.sidebar a {
+  display: inline-block;
+  color: inherit;
+  margin: 15px 0;
+}
+
+.sidebar a {
+  position: relative;
+  display: block;
+  justify-self: center;
+}
+
+input[type="search"] {
+  height: 25px;
+  background-color: #CCF;
+  border: none;
+  border-radius: 10px;
+  align-self: center;
+}
+
+.icon {
+  width: 35px;
+  height: 35px;
+  margin: 0 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.lightgrey {
+  background-color: lightslategrey;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.pink {
+  background-color: pink;
+}
+
+.violet {
+  background-color: blueviolet;
+}
+
+.user {
+  position: relative;
+  font-size: 18px;
+}
+
+.user>.icon::after {
+  content: "Hi there,";
+  position: absolute;
+  top: 10px;
+  left: 66px;
+  font-size: 12px;
+}
+
+.avatar button {
+  margin: 0 5px;
+  padding: 8px;
+  width: 100px;
+  border-radius: 15px;
+  border: none;
+  background-color: #08F;
+  color: white;
+  justify-self: flex-end;
+}
+
+div>.icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.end {
+  align-items: flex-end;
+}
+
+#options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 70%;
+  margin-left: 10px;
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+}
+
+.avatar {
+  grid-template-columns: 1fr 2fr;
+}
+
+.avatar .user+div {
+  justify-self: end;
+}
+
+.separator {
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
+  display: block;
+  margin: 5px 0;
+  padding: 5px 0;
+}
+
+.horizontal {
+  display: grid;
+  grid-template-columns: 1fr 75%;
+  gap: 5px;
+  align-items: center;
+  margin: 3px 0;
+}
+
+.horizontal p {
+  font-weight: normal;
+}
+
+.svg {
+  position: absolute;
+  left: -33px;
+  top: -6px;
 }
